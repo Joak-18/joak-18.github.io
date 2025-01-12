@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #a3c4f3, #f3a3b4);
+            color: #fef9d9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 9rem;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .photo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #ffffff22;
+            padding: 10px;
+            border: 5px solid #fef9d9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-container img {
+ 
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .photo-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .photo-container .date {
+            margin-top: 100px;
+            font-size: 100px;
+            color: #fef9d9;
+        }
+
+        .message-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff22;
+            color: #fef9d9;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 10rem;
+            text-align: center;
+            z-index: 10;
+            display: none;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Galería de Fotos</h1>
+    <div class="gallery">
+        <div class="photo-container">
+            <img src="foto1.jpeg" alt="Foto 1" onclick="mostrarMensaje('Un miercoles recibi un mensaje sin saber que  llegariamos a terminar asi')">
+            <div class="date">16/10/2024</div>
+        </div>
+        <div class="photo-container">
+            <img src="foto2.jpeg" alt="Foto 2" onclick="mostrarMensaje('Recuerdo este dia y es donde empezo todo, pude sentir lo que hace tiempo no lo sentia')">
+            <div class="date">18/10/2024</div>
+        </div>
+        <div class="photo-container">
+            <img src="foto3.jpeg" alt="Foto 3" onclick="mostrarMensaje('La primera vez que bese tus labios senti tener el mundo en mis manos')">
+            <div class="date">25/10/2024</div>
+        </div>
+        <div class="photo-container">
+            <img src="foto4.jpeg" alt="Foto 4" onclick="mostrarMensaje('Se que el cielo es real, voy ahi cada vez que me tocas')">
+            <div class="date">30/10/2024</div>
+        </div>
+<div class="photo-container">
+            <img src="foto5.jpeg" alt="Foto 5" onclick="mostrarMensaje('Solo te siento a ti, no importa nuestro alrededor, solo somos tu y yo')">
+            <div class="date">01/11/2024</div>
+        </div>
+<div class="photo-container">
+            <img src="foto6.jpeg" alt="Foto 6" onclick="mostrarMensaje('Eres el riego que quiero tomar')">
+            <div class="date">09/11/2024</div>
+        </div>
+<div class="photo-container">
+            <img src="foto7.jpeg" alt="Foto 7" onclick="mostrarMensaje('C')">
+            <div class="date">22/11/2024</div>
+        </div>
+<div class="photo-container">
+            <img src="foto8.jpeg" alt="Foto 8" onclick="mostrarMensaje('Mensaje para la foto 4')">
+            <div class="date">30/11/2024</div>
+        </div>
+<div class="photo-container">
+            <img src="foto9.jpeg" alt="Foto 9" onclick="mostrarMensaje('Mensaje para la foto 4')">
+            <div class="date">05/12/2024</div>
+        </div>
+<div class="photo-container">
+            <img src="foto10.jpeg" alt="Foto 10" onclick="mostrarMensaje('Mensaje para la foto 4')">
+            <div class="date">18/12/2024</div>
+        </div>
+    </div>
+
+    <div class="overlay" onclick="cerrarMensaje()"></div>
+    <div class="message-box" id="messageBox"></div>
+
+    <script>
+        function mostrarMensaje(mensaje) {
+            const messageBox = document.getElementById('messageBox');
+            const overlay = document.querySelector('.overlay');
+            messageBox.textContent = mensaje;
+            messageBox.style.display = 'block';
+            overlay.style.display = 'block';
+        }
+
+        function cerrarMensaje() {
+            const messageBox = document.getElementById('messageBox');
+            const overlay = document.querySelector('.overlay');
+            messageBox.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+
